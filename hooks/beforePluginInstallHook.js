@@ -46,6 +46,10 @@ module.exports = function(ctx) {
   console.log(JSON.stringify(pluginNpmDependencies, null, 2));
 
   var npm = (process.platform === "win32" ? "npm.cmd" : "npm");
+
+  var result = spawnSync(npm, ['--version'], { });
+  console.log(result);
+
   var result = spawnSync(npm, ['install', '--production'], { cwd: './plugins/' + ctx.opts.plugin.id });
   if (result.error) {
     throw result.error;
