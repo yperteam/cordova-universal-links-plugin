@@ -47,6 +47,10 @@ module.exports = function(ctx) {
 
   var npm = (process.platform === "win32" ? "npm.cmd" : "/usr/local/bin/npm");
 
+  console.log(npm);
+  console.log("spawnSync");
+  console.log(spawnSync);
+
   var result = spawnSync(npm, ['--version'], { });
   console.log(result);
 
