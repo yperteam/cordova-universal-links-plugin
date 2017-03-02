@@ -45,7 +45,7 @@ module.exports = function(ctx) {
   console.log('Installing dependency packages: ');
   console.log(JSON.stringify(pluginNpmDependencies, null, 2));
 
-  var npm = (process.platform === "win32" ? "npm.cmd" : "npm");
+  var npm = (process.platform === "win32" ? "npm.cmd" : "/usr/local/bin/npm");
 
   var result = spawnSync(npm, ['--version'], { });
   console.log(result);
